@@ -87,7 +87,7 @@ class ValueEquationNode extends EquationNode {
                 return new RootEquationNode([new ValueEquationNode([Math.pow(this.parameters[0], r)]),
                                                 new ValueEquationNode([r])]);
             case 4:
-                r = Math.floor(Math.random() * (Math.pow(10, 10 / this.parameters[0]) - 2)) + 2
+                r = Math.floor(Math.random() * (Math.pow(10, 10 / Math.max(this.parameters[0], 1)) - 2)) + 2
                 if (Math.pow(r, this.parameters[0]) < 10000000000) {
                     return new LogEquationNode([new ValueEquationNode([Math.pow(r, this.parameters[0])]),
                                                 new ValueEquationNode([r])]);
