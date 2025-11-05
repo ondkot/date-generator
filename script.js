@@ -83,7 +83,7 @@ class ValueEquationNode extends EquationNode {
                 return new DivideEquationNode([new ValueEquationNode([this.parameters[0] * r]),
                                                 new ValueEquationNode([r])]);
             case 3:
-                r = (Math.random() < P_CMPXG_SIMP) ? (Math.floor(Math.random() * (c / Math.log10(this.parameters[0]) - 1)) + 1) : 1
+                r = (Math.random() < P_CMPXG_SIMP) ? (Math.floor(Math.random() * (10 / Math.max(Math.log10(this.parameters[0]), 1) - 1)) + 1) : 1
                 return new RootEquationNode([new ValueEquationNode([Math.pow(this.parameters[0], r)]),
                                                 new ValueEquationNode([r])]);
             case 4:
